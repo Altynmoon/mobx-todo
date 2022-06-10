@@ -15,24 +15,34 @@ export const Todo = observer(() => {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    /* color-adjust: white; */
+    
   `;
 
   const ButtonGroup = styled("div")`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 55px;
   `;
    return (
     <TodoWrapper>
+
       <TodoForm />
+
       {store.todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
+
       <ButtonGroup>
+
         <Button variant="outlined" onClick={() => store.saveTodos()}>save todos</Button>
+
         <Button variant="outlined" onClick={() => store.loadTodos()}>update todos</Button>
+
       </ButtonGroup>
+
     </TodoWrapper>
   );
 });
